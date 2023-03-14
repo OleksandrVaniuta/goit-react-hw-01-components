@@ -12,8 +12,7 @@ export const Transaction = ({ data }) => {
         </tr>
       </Head>
       <TblBody>
-        {data.map(item => {
-          const { id, type, amount, currency } = item;
+        {data.map(({ id, type, amount, currency }) => {
           return (
             <tr key={id}>
               <td>{type}</td>
