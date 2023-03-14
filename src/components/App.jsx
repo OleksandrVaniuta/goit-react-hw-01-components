@@ -1,5 +1,5 @@
 import { Container } from './app.styled';
-import { Profile } from 'components/Profile/Profile';
+import { Profile } from './Profile/Profile';
 import { Statistics } from './Statistic/Section';
 import { FriendList } from './Friends/Friends-list';
 import { Transaction } from './Transactions/Transactions';

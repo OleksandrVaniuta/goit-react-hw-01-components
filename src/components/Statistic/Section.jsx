@@ -4,11 +4,10 @@ import { Section, StatTitle, StatList, StatItem } from './Section.styled';
 export const Statistics = ({ title, stats }) => {
   return (
     <Section className="statistics">
-      {title.length > 0 && <StatTitle>{title}</StatTitle>}
+      {title && <StatTitle>{title}</StatTitle>}
 
       <StatList>
-        {stats.map(stat => {
-          const { id, label, percentage } = stat;
+        {stats.map(({ id, label, percentage }) => {
           return (
             <StatItem key={id} style={{ background: `${getRandomColor()}` }}>
               <span>{label}</span>
@@ -25,9 +24,9 @@ Statistics.propTypes = {
   text: PropTypes.string,
   stats: PropTypes.arrayOf(
     PropTypes.exact({
-      id: PropTypes.string,
-      label: PropTypes.string,
-      percentage: PropTypes.number,
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
     })
   ),
 };
